@@ -36,13 +36,13 @@ Este valor se utiliza como referencia para diversas obligaciones tributarias y s
 
 Los contribuyentes asalariados en Colombia están obligados a presentar una declaración de renta si cumplen con alguna de las siguientes condiciones:
 
-    1.El valor de los activos poseídos al 31 de diciembre supera las 4,500 Unidades Tributarias (UVT), lo que equivale aproximadamente a COP 211,792,500 (basado en el valor de 2024) 
+    1.El valor de los activos poseídos al 31 de diciembre supera las 4,500 Unidades Tributarias (UVT), lo que equivale aproximadamente a COP 211,792,500 
     
-    2.Los cargos a tarjetas de crédito durante el año fiscal superan las 1,400 UVT (aproximadamente COP 65,891,000 para 2024) 
+    2.Los cargos a tarjetas de crédito durante el año fiscal superan las 1,400 UVT (aproximadamente COP 65,891,000) 
     
-    3.El valor total de las compras en efectivo supera las 1,400 UVT (COP 65,891,000 para 2024) 
+    3.El valor total de las compras en efectivo supera las 1,400 UVT (COP 65,891,000) 
     
-    4.El valor total de los depósitos bancarios y otras inversiones supera las 1,400 UVT (COP 65,891,000 para 2024) 
+    4.El valor total de los depósitos bancarios y otras inversiones supera las 1,400 UVT (COP 69.718.600) 
     
     5.Los ingresos durante el año fiscal superan las 1,400 UVT (COP 65,891,000 para 2024) 
 
