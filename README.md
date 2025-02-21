@@ -27,3 +27,6 @@ Esto se obtiene al calcular la declaración de renta de la persona.
 **Procesos y operaciones:**
 Las formulas del impuesto se obtuvieron en base al artículo 241 del Estatuto Tributario Nacional:
 
+![image](https://github.com/user-attachments/assets/1bb101d8-3c00-4e88-be18-5a97614735ff)
+
+
