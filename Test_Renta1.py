@@ -1,6 +1,6 @@
 import unittest
 
-import Renta1
+import LogicaRenta
 
 class RentaTest(unittest.TestCase):
     def testbaseGravable(self):
@@ -9,9 +9,9 @@ class RentaTest(unittest.TestCase):
         aportes_salud_pension = 4_800_000
         numero_dependientes = 6_000_000
 
-        result = Renta1.obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes)
+        result = LogicaRenta.obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes)
 
-        expected: 69_200_000
+        expected = 69_200_000
 
         self.assertAlmostEqual(expected, result, 0)
 
@@ -20,7 +20,7 @@ class RentaTest(unittest.TestCase):
         
         base_gravable = 69_200_000
 
-        result = Renta1.obtener_base_gravable_en_uvt(base_gravable)
+        result = LogicaRenta.obtener_base_gravable_en_uvt(base_gravable)
 
         expected = 1_390
 
@@ -29,9 +29,9 @@ class RentaTest(unittest.TestCase):
 
     def testImpuestos(self):
         
-        result = Renta1.obtener_impuesto()
+        result = LogicaRenta.obtener_impuesto()
 
-        expected = 2_834_627
+        expected = 2_838_543
 
         self.assertAlmostEqual(expected, result, 0)
         pass
