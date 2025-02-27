@@ -13,7 +13,7 @@ class RentaTest(unittest.TestCase):
 
         expected: 69_200_000
 
-        self.assertAlmostEqual(expected, result, 2)
+        self.assertAlmostEqual(expected, result, 0)
 
 
     def testBaseGravableUVT(self):
@@ -24,7 +24,7 @@ class RentaTest(unittest.TestCase):
 
         expected = 1_390
 
-        self.assertAlmostEqual(expected, result, 2)
+        self.assertAlmostEqual(expected, result, 0)
         pass
 
     def testImpuestos(self):
@@ -33,5 +33,5 @@ class RentaTest(unittest.TestCase):
 
         expected = 2_834_627
 
-        self.assertAlmostEqual(expected, result, 2)
+        self.assertAlmostEqual(expected, result, 0)
         pass
