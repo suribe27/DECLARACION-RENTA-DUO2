@@ -1,16 +1,20 @@
-from typing import Any
 
-VALOR_UVT: int = 49_799
-ingresos_brutos_anuales : float = 80_000_000
-aportes_salud_pension : float = 4_800_000
-numero_dependientes : float = 6_000_000
 
-def obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes):
-    base_gravable = ingresos_brutos_anuales - (aportes_salud_pension + numero_dependientes)
+VALOR_UVT: int = 49_799 #Unidad de valor tributario
+ingresos_brutos_anuales = 1800000000
+aportes_salud_pension = 0
+numero_dependientes = 0
+intereses_credito_hipotecario = 0
+consumos_tarjeta_credito = 0
+depositos_bancarios = 0
+patrimonio_bruto = 0
+
+def obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes, intereses_credito_hipotecario):
+    base_gravable = ingresos_brutos_anuales - (aportes_salud_pension + numero_dependientes + intereses_credito_hipotecario)
     return base_gravable
 
-base_gravable = obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes)
-print(obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes))
+base_gravable = obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes, intereses_credito_hipotecario)
+print(obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes, intereses_credito_hipotecario))
 
 
 def obtener_base_gravable_en_uvt(base_gravable):
@@ -21,7 +25,7 @@ def obtener_base_gravable_en_uvt(base_gravable):
 base_gravable_en_uvt = obtener_base_gravable_en_uvt(base_gravable)
 print(obtener_base_gravable_en_uvt(base_gravable))
 
-def obtener_impuesto():
+def obtener_impuesto(base_gravable_en_uvt):
     
     if base_gravable_en_uvt > 1090 and base_gravable_en_uvt < 1700:
         impuesto: float = ((base_gravable_en_uvt - 1_090) * 0.19) * VALOR_UVT
@@ -43,5 +47,5 @@ def obtener_impuesto():
     
     return round(impuesto)
 
-obtener_impuesto()
-print(obtener_impuesto())
+obtener_impuesto(base_gravable_en_uvt)
+print(obtener_impuesto(base_gravable_en_uvt))
