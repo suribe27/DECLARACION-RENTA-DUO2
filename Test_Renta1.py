@@ -1,6 +1,10 @@
 import unittest
 
 import LogicaRenta
+from LogicaRenta import IngresosNegativosError, DependientesExcedidoError, \
+    AportesSaludExcedidoError  # Importar las clases de excepción
+
+
 
 class RentaTestNorm(unittest.TestCase):
     
@@ -8,8 +12,8 @@ class RentaTestNorm(unittest.TestCase):
     def testbaseGravable_1(self):
 
         ingresos_brutos_anuales = 80_000_000
-        aportes_salud_pension = 4_800_000
-        numero_dependientes = 6_000_000
+        aportes_salud_pension = 4_000_000
+        numero_dependientes = 0
         intereses_credito_hipotecario = 0
 
         result = LogicaRenta.obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes, intereses_credito_hipotecario)
@@ -116,22 +120,56 @@ class RentaTestNorm(unittest.TestCase):
 
 
 class RentaTestExt(unittest.TestCase):
-    
-    """
-    CASOS EXTRAORDINARIOS 1 Y 2 PENDIENTES
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    .
-    """
 
+    # Caso Extraordinario 4
+    def testbaseGravable_4(self):
+        ingresos_brutos_anuales = 120_000_000
+        aportes_salud_pension = 4_800_000
+        numero_dependientes = 0  # N/A se asume 0 para calculo
+        intereses_credito_hipotecario = 0  # N/A se asume 0 para calculo
 
+        result = LogicaRenta.obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes,
+                                       intereses_credito_hipotecario)
+        expected = 115_200_000
+        self.assertAlmostEqual(expected, result, 0)
+
+    def testBaseGravableUVT_4(self):
+        base_gravable = 115_200_000
+        result = LogicaRenta.obtener_base_gravable_en_uvt(base_gravable)
+        expected = 2313
+        self.assertAlmostEqual(expected, result, 0)
+
+    def testImpuestos_4(self):
+        base_gravable_en_uvt = 2313
+        result = LogicaRenta.obtener_impuesto(base_gravable_en_uvt)
+        expected = 14_324_184  # Valor tomado de la tabla como referencia
+        self.assertAlmostEqual(expected, result, 0)
+
+    #Caso Extraordinario 5
+    def testbaseGravable_5(self):
+        ingresos_brutos_anuales = 70_000_000
+        aportes_salud_pension = 0  # N/A se asume 0 para calculo
+        numero_dependientes = 0  # N/A se asume 0 para calculo
+        intereses_credito_hipotecario = 0  # N/A se asume 0 para calculo
+
+        result = LogicaRenta.obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes,
+                                       intereses_credito_hipotecario)
+        expected = 70_000_000
+        self.assertAlmostEqual(expected, result, 0)
+
+    def testBaseGravableUVT_5(self):
+        base_gravable = 70_000_000
+        result = LogicaRenta.obtener_base_gravable_en_uvt(base_gravable)
+        expected = 1406
+        self.assertAlmostEqual(expected, result, 0)
+
+    def testImpuestos_5(self):
+        base_gravable_en_uvt = 1406
+        result = LogicaRenta.obtener_impuesto(base_gravable_en_uvt)
+        expected = 2_989_932  # Valor tomado de la tabla como referencia
+        self.assertAlmostEqual(expected, result, 0)
+
+    # Caso Extraordinario 6
     def testbaseGravable_6(self):
 
         ingresos_brutos_anuales = 1_800_000_000
@@ -169,6 +207,43 @@ class RentaTestExt(unittest.TestCase):
 
 
 class RentaTestErr(unittest.TestCase):
+
+    def testbaseGravable_7_error_ingresos_negativos(self):
+        ingresos_brutos_anuales = -10_000_000  # Ingresos negativos, caso de error 7
+        aportes_salud_pension = 0  # N/A, se asume 0
+        numero_dependientes = 0  # N/A, se asume 0
+        intereses_credito_hipotecario = 0  # N/A, se asume 0
+
+        with self.assertRaises(IngresosNegativosError):  # Usar la clase de excepción personalizada
+            LogicaRenta.obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes,
+                                  intereses_credito_hipotecario)
+
+    def testbaseGravable_8_error_dependientes_excedido(self):
+        ingresos_brutos_anuales = 90_000_000
+        aportes_salud_pension = 0  # N/A, se asume 0
+        numero_dependientes = 5  # Dependientes excedido límite, caso de error 8
+        intereses_credito_hipotecario = 0  # N/A, se asume 0
+
+        with self.assertRaises(DependientesExcedidoError):  # Usar la clase de excepción personalizada
+            LogicaRenta.obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes,
+                                  intereses_credito_hipotecario)
+
+    def testbaseGravable_9_error_aportes_salud_excedido_porcentaje(self):
+        ingresos_brutos_anuales = 80_000_000
+        aportes_salud_pension = 10_000_000  # Aportes a salud exceden %, caso de error 9
+        numero_dependientes = 0  # N/A, se asume 0
+        intereses_credito_hipotecario = 0  # N/A, se asume 0
+
+        with self.assertRaises(AportesSaludExcedidoError):  # Usar la clase de excepción personalizada
+            LogicaRenta.obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes,
+                                  intereses_credito_hipotecario)
+
+    # Caso 10 no se prueba directamente con excepciones en base gravable porque
+    # es un error de contexto de fecha, no un error en los datos de entrada numéricos
+    # para el cálculo de base gravable.
+
+
+
 
     
 
