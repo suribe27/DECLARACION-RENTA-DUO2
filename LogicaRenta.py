@@ -1,13 +1,13 @@
 
 
 VALOR_UVT: int = 49_799 #Unidad de valor tributario
+VALOR_MINIMO_UVT: int = 1400
+VALOR_MINIMO_IMPUESTO: int = VALOR_MINIMO_UVT * VALOR_UVT
 ingresos_brutos_anuales = 120_000_000
 aportes_salud_pension = 1_000_000
 numero_dependientes = 0
 intereses_credito_hipotecario = 0
-consumos_tarjeta_credito = 0
-depositos_bancarios = 0
-patrimonio_bruto = 0
+
 
 class IngresosNegativosError(Exception):
     """Excepción para cuando los ingresos brutos anuales son negativos (Caso 7)."""
@@ -20,6 +20,11 @@ class DependientesExcedidoError(Exception):
 class AportesSaludExcedidoError(Exception):
     """Excepción para cuando los aportes a salud y pensión superan el límite (Caso 9)."""
     pass
+
+class IngresosInferioresAlMinimoError(Exception):
+    """Excepción para cuando los ingresos brutos anuales son inferiores al mínimo para declarar (Caso 10)."""
+    pass
+
 def obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes, intereses_credito_hipotecario):
     if ingresos_brutos_anuales < 0:
         raise IngresosNegativosError("Los ingresos brutos anuales no pueden ser negativos (Caso 7).")
@@ -30,8 +35,11 @@ def obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero
     if aportes_salud_pension > ingresos_brutos_anuales * 0.04:  # 4% de los ingresos brutos
         raise AportesSaludExcedidoError(
             "Los aportes a salud y pensión superan el 4% de los ingresos brutos anuales (Caso 9).")
+    
+    if ingresos_brutos_anuales < VALOR_MINIMO_IMPUESTO: # Validación para el Caso 10
+        raise IngresosInferioresAlMinimoError(f"Los ingresos brutos anuales deben ser superiores a 1.400 UVT, lo que equivale a ${VALOR_MINIMO_IMPUESTO} pesos colombianos (Caso 10).")
 
-    base_gravable = ingresos_brutos_anuales - (aportes_salud_pension + numero_dependientes + intereses_credito_hipotecario)
+    base_gravable = ingresos_brutos_anuales - (aportes_salud_pension + intereses_credito_hipotecario)
     return base_gravable
 
 base_gravable = obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes, intereses_credito_hipotecario)
