@@ -3,11 +3,6 @@
 VALOR_UVT: int = 49_799 #Unidad de valor tributario
 VALOR_MINIMO_UVT: int = 1400
 VALOR_MINIMO_IMPUESTO: int = VALOR_MINIMO_UVT * VALOR_UVT
-ingresos_brutos_anuales = 120_000_000
-aportes_salud_pension = 1_000_000
-numero_dependientes = 0
-intereses_credito_hipotecario = 0
-
 
 class IngresosNegativosError(Exception):
     """Excepción para cuando los ingresos brutos anuales son negativos (Caso 7)."""
@@ -42,17 +37,12 @@ def obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero
     base_gravable = ingresos_brutos_anuales - (aportes_salud_pension + intereses_credito_hipotecario)
     return base_gravable
 
-base_gravable = obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes, intereses_credito_hipotecario)
-print(obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes, intereses_credito_hipotecario))
-
 
 def obtener_base_gravable_en_uvt(base_gravable):
     base_gravable_en_uvt = base_gravable / VALOR_UVT
 
     return round(base_gravable_en_uvt)
 
-base_gravable_en_uvt = obtener_base_gravable_en_uvt(base_gravable)
-print(obtener_base_gravable_en_uvt(base_gravable))
 
 def obtener_impuesto(base_gravable_en_uvt):
     
@@ -76,5 +66,3 @@ def obtener_impuesto(base_gravable_en_uvt):
     
     return round(impuesto)
 
-obtener_impuesto(base_gravable_en_uvt)
-print(obtener_impuesto(base_gravable_en_uvt))
