@@ -16,7 +16,6 @@ Criterios a tener en cuenta para el proceso de declaración de impuestos, ya que
     7. Patrimonio bruto.
     8. Retenciones en la fuente.
     9. Tipo de cambio (si hay ingresos en USD).
-    10. NIT y fecha de declaración.
 
 **Variables de salida:**
 Esto se obtiene al calcular la declaración de renta de la persona.
