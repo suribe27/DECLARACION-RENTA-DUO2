@@ -10,9 +10,11 @@ Programa que permite calcular si un usuario debe declarar renta, proporcionando 
 ## ¿Cómo lo hago funcionar?
 - **Prerrequisitos**: inicializar la consola de sus sistema operativo.
 - **Ejecución**: En la consola, ubicados en la carpeta raíz del proyecto, utilice el siguiente comando:
-   ´´´
+
+  '''
   py ConsolaRenta.py
-  ´´´ 
+
+  '''
 
 
 ## ¿Cómo está hecho?
