@@ -1,8 +1,15 @@
-# DECLARACION-RENTA
-Miguel Martinez Tamayo - Juan Esteban Vallejo
+# DECLARACION DE RENTA
+
+# ¿Quién hizo esto?
+- Miguel Martinez Tamayo
+- Juan Esteban Vallejo
+
+# ¿Qué es y para qué es?
+Programa que permite calcular si un usuario debe declarar renta, proporcionando valores como el impuesto a pagar y su vase gravable en Unidad de Valor Tributario (UVT) y en pesos colombianos (COP)
+
+# ¿Cómo está hecho?
 link de excel para la declaracion de impuestos de un asalariado (CASOS DE PRUEBA)
 https://docs.google.com/spreadsheets/d/1IwasnT6Vj87bwmWxKCBOTA8iFx_RkNW8GP2FXW7QbEE/edit?usp=sharing
-
 
 **Variables de entrada:**
 Criterios a tener en cuenta para el proceso de declaración de impuestos, ya que si la persona supera uno o más, deberá cumplir con la declaración de sus ingresos para evitar sanciones:
