@@ -8,8 +8,8 @@
 Programa que permite calcular si un usuario debe declarar renta, proporcionando valores como el impuesto a pagar y su vase gravable en Unidad de Valor Tributario (UVT) y en pesos colombianos (COP)
 
 ## ¿Cómo lo hago funcionar?
-- **Prerrequisitos**: inicializar la consola de sus sistema operativo, y, a demás, buscar allí la ruta del archivo del programa (DECLARACION-RENTA).
-- **Ejecución**: En la consola, ubicados en la carpeta raíz del proyecto, utilice el siguiente comando:
+- Inicializar la consola de sus sistema operativo, y, a demás, buscar allí la ruta del archivo del programa (DECLARACION-RENTA).
+- En la consola, ubicados en la carpeta raíz del proyecto, utilice el siguiente comando:
 
   ```
   py src/view/console/ConsolaRenta.py
