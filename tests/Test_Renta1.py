@@ -1,7 +1,10 @@
 import unittest
 
-import LogicaRenta
-from LogicaRenta import IngresosNegativosError, DependientesExcedidoError, \
+import sys 
+sys.path.append("src")
+
+from model import LogicaRenta
+from src.model.LogicaRenta import IngresosNegativosError, DependientesExcedidoError, \
     AportesSaludExcedidoError, IngresosInferioresAlMinimoError  # Importar las clases de excepción
 
 

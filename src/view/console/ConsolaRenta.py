@@ -1,4 +1,4 @@
-from LogicaRenta import obtener_base_gravable, obtener_base_gravable_en_uvt, obtener_impuesto, IngresosNegativosError, DependientesExcedidoError, AportesSaludExcedidoError, IngresosInferioresAlMinimoError, VALOR_UVT, VALOR_MINIMO_IMPUESTO
+from src.model.LogicaRenta import obtener_base_gravable, obtener_base_gravable_en_uvt, obtener_impuesto, IngresosNegativosError, DependientesExcedidoError, AportesSaludExcedidoError, IngresosInferioresAlMinimoError, VALOR_UVT, VALOR_MINIMO_IMPUESTO
 
 def main():
     """
