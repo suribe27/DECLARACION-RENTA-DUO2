@@ -17,8 +17,12 @@ class RentaTestNorm(unittest.TestCase):
         numero_dependientes = 0
         intereses_credito_hipotecario = 0
 
-        result = obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes,
-                                       intereses_credito_hipotecario)
+        result = obtener_base_gravable(
+            ingresos_brutos_anuales,
+            aportes_salud_pension,
+            numero_dependientes,
+            intereses_credito_hipotecario
+        )
 
         expected = 76_800_000
 
@@ -50,8 +54,12 @@ class RentaTestNorm(unittest.TestCase):
         numero_dependientes = 0
         intereses_credito_hipotecario = 15_000_000
 
-        result = obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes,
-                                       intereses_credito_hipotecario)
+        result = obtener_base_gravable(
+            ingresos_brutos_anuales,
+            aportes_salud_pension,
+            numero_dependientes,
+            intereses_credito_hipotecario
+        )
 
         expected = 130_000_000
 
@@ -83,8 +91,12 @@ class RentaTestNorm(unittest.TestCase):
         numero_dependientes = 0
         intereses_credito_hipotecario = 0
 
-        result = obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes,
-                                       intereses_credito_hipotecario)
+        result = obtener_base_gravable(
+            ingresos_brutos_anuales,
+            aportes_salud_pension,
+            numero_dependientes,
+            intereses_credito_hipotecario
+        )
 
         expected = 120_000_000
 
@@ -118,8 +130,12 @@ class RentaTestExt(unittest.TestCase):
         numero_dependientes = 0  # N/A se asume 0 para calculo
         intereses_credito_hipotecario = 0  # N/A se asume 0 para calculo
 
-        result = obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes,
-                                       intereses_credito_hipotecario)
+        result = obtener_base_gravable(
+            ingresos_brutos_anuales,
+            aportes_salud_pension,
+            numero_dependientes,
+            intereses_credito_hipotecario
+        )
         expected = 115_200_000
         self.assertAlmostEqual(expected, result, 0)
 
@@ -135,15 +151,19 @@ class RentaTestExt(unittest.TestCase):
         expected = 14_324_184  # Valor tomado de la tabla como referencia
         self.assertAlmostEqual(expected, result, 0)
 
-        # Caso Extraordinario 5
+    # Caso Extraordinario 5
     def test_base_gravable_5(self):
         ingresos_brutos_anuales = 70_000_000
         aportes_salud_pension = 0  # N/A se asume 0 para calculo
         numero_dependientes = 0  # N/A se asume 0 para calculo
         intereses_credito_hipotecario = 0  # N/A se asume 0 para calculo
 
-        result = obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes,
-                                       intereses_credito_hipotecario)
+        result = obtener_base_gravable(
+            ingresos_brutos_anuales,
+            aportes_salud_pension,
+            numero_dependientes,
+            intereses_credito_hipotecario
+        )
         expected = 70_000_000
         self.assertAlmostEqual(expected, result, 0)
 
@@ -166,8 +186,12 @@ class RentaTestExt(unittest.TestCase):
         numero_dependientes = 0
         intereses_credito_hipotecario = 0
 
-        result = obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes,
-                                       intereses_credito_hipotecario)
+        result = obtener_base_gravable(
+            ingresos_brutos_anuales,
+            aportes_salud_pension,
+            numero_dependientes,
+            intereses_credito_hipotecario
+        )
 
         expected = 1_800_000_000
 
@@ -201,8 +225,12 @@ class RentaTestErr(unittest.TestCase):
         intereses_credito_hipotecario = 0  # N/A, se asume 0
 
         with self.assertRaises(IngresosNegativosError):  # Usar la clase de excepción personalizada
-            obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes,
-                                  intereses_credito_hipotecario)
+            obtener_base_gravable(
+                ingresos_brutos_anuales,
+                aportes_salud_pension,
+                numero_dependientes,
+                intereses_credito_hipotecario
+            )
 
     def test_base_gravable_8_error_dependientes_excedido(self):
         ingresos_brutos_anuales = 90_000_000
@@ -211,8 +239,12 @@ class RentaTestErr(unittest.TestCase):
         intereses_credito_hipotecario = 0  # N/A, se asume 0
 
         with self.assertRaises(DependientesExcedidoError):  # Usar la clase de excepción personalizada
-            obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes,
-                                  intereses_credito_hipotecario)
+            obtener_base_gravable(
+                ingresos_brutos_anuales,
+                aportes_salud_pension,
+                numero_dependientes,
+                intereses_credito_hipotecario
+            )
 
     def test_base_gravable_9_error_aportes_salud_excedido_porcentaje(self):
         ingresos_brutos_anuales = 80_000_000
@@ -221,8 +253,12 @@ class RentaTestErr(unittest.TestCase):
         intereses_credito_hipotecario = 0  # N/A, se asume 0
 
         with self.assertRaises(AportesSaludExcedidoError):  # Usar la clase de excepción personalizada
-            obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes,
-                                  intereses_credito_hipotecario)
+            obtener_base_gravable(
+                ingresos_brutos_anuales,
+                aportes_salud_pension,
+                numero_dependientes,
+                intereses_credito_hipotecario
+            )
 
     def test_base_gravable_10_error_ingresos_inferiores_al_minimo(self):
         ingresos_brutos_anuales = 60_000_000  # Ingresos inferiores al mínimo, caso de error 10 (Ejemplo: 60.000.000 < 69.718.600)
@@ -232,5 +268,9 @@ class RentaTestErr(unittest.TestCase):
 
         with self.assertRaises(
                 IngresosInferioresAlMinimoError):  # Usar la clase de excepción personalizada para Caso 10
-            obtener_base_gravable(ingresos_brutos_anuales, aportes_salud_pension, numero_dependientes,
-                                  intereses_credito_hipotecario)
+            obtener_base_gravable(
+                ingresos_brutos_anuales,
+                aportes_salud_pension,
+                numero_dependientes,
+                intereses_credito_hipotecario
+            )
