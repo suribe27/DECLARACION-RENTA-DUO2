@@ -38,10 +38,6 @@ Programa que permite calcular si un usuario debe declarar renta, proporcionando 
     
    En resumen, la arquitectura del proyecto sigue un patrón que separa la lógica de negocio (en el modelo) de la interfaz de usuario (en la vista/consola), facilitando la mantenibilidad y la realización de pruebas unitarias. La capa de pruebas (tests) asegura la calidad del código.
 
-
-Fuentes y contenido relacionado
-
-  
 ## Ejecución de Pruebas Unitarias
 
   A continuación, se explica cómo ejecutar las pruebas unitarias utilizando Visual Studio Code y PyCharm.
