@@ -14,6 +14,34 @@ Programa que permite calcular si un usuario debe declarar renta, proporcionando 
   ```
   py src/view/console/ConsolaRenta.py
   ```
+## Descripciòn de la arquitectura
+
+**Este proyecto presenta una arquitectura con una clara separación de responsabilidades, organizada en los siguientes directorios y archivos clave:**
+
+    src/model: Este directorio contiene la capa del Modelo. Dentro de él, se encuentra el archivo LogicaRenta.py, que encapsula la lógica de negocio fundamental para el cálculo del impuesto sobre la renta. Esto incluye las funciones para determinar la base gravable, convertirla a UVT y calcular el impuesto final, así como las definiciones de las excepciones personalizadas para el manejo de errores. El archivo __init__.py (aunque esté vacío en la imagen) se utiliza para marcar el directorio model como un paquete de Python.
+    
+    src/view/console: Este directorio alberga la capa de la Vista (interfaz de usuario) específica para la consola. El archivo ConsolaRenta.py contiene el código para la interfaz de línea de comandos, permitiendo a los usuarios interactuar con la aplicación a través de la terminal para ingresar los datos necesarios y visualizar los resultados del cálculo del impuesto.
+    
+    tests: Este directorio está dedicado a las Pruebas. Aunque la imagen no muestra el contenido específico, se espera que contenga archivos de prueba (como el Test_Renta1.py mencionado en tu código anterior) que utilizan el módulo unittest para verificar la correcta funcionalidad de la lógica implementada en el modelo.
+
+**Además de estas capas principales, se observan otros archivos en la raíz del proyecto:**
+
+    README.md: Este es el archivo de documentación principal del proyecto, donde se deben incluir las instrucciones de uso, la descripción de la arquitectura y otra información relevante.
+    
+    DECLARACION DE RENTA.mp3: Este archivo es el audio en el que el experto que nos acompaña da una visión general de lo que sería el contexto de la declaración de renta de un asalariado.
+    
+    _pycache_: Este directorio es creado por Python para almacenar archivos bytecode compilados de los módulos, lo que ayuda a acelerar la carga de los programas.
+    
+    Archivos .cpython-*.pyc: Estos también son archivos bytecode compilados por Python para diferentes versiones del lenguaje.
+    
+    .vscode/settings.json: Este archivo contiene configuraciones específicas para el editor Visual Studio Code.
+    
+   En resumen, la arquitectura del proyecto sigue un patrón que separa la lógica de negocio (en el modelo) de la interfaz de usuario (en la vista/consola), facilitando la mantenibilidad y la realización de pruebas unitarias. La capa de pruebas (tests) asegura la calidad del código.
+
+
+Fuentes y contenido relacionado
+
+  
 ## Ejecución de Pruebas Unitarias
 
   A continuación, se explica cómo ejecutar las pruebas unitarias utilizando Visual Studio Code y PyCharm.
