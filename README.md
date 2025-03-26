@@ -14,8 +14,45 @@ Programa que permite calcular si un usuario debe declarar renta, proporcionando 
   ```
   py src/view/console/ConsolaRenta.py
   ```
-  
+## Ejecución de Pruebas Unitarias
 
+  A continuación, se explica cómo ejecutar las pruebas unitarias utilizando Visual Studio Code y PyCharm.
+
+**Opción 1: Visual Studio Code (VS Code)**
+
+  Abre tu proyecto en VS Code: Asegúrate de tener la carpeta raíz de tu proyecto abierta en Visual Studio Code.
+  
+  Instala la extensión de Python: Si aún no la tienes, instala la extensión oficial de Python de Microsoft desde el Marketplace de VS Code.
+  
+  Configura las pruebas (si es necesario):
+  
+  Ve a la vista de "Testing" (icono del matraz de laboratorio en la barra de actividad lateral). Si no lo ves, puedes habilitarlo desde el menú View > Explorer y buscando "Testing", o usando el comando View: Show Test Explorer.
+  Si VS Code no detecta automáticamente tus pruebas, verás un mensaje para configurar las pruebas. Haz clic en "Configure Python Tests".
+  Selecciona el framework de pruebas: Elige unittest.
+  Selecciona el directorio raíz de las pruebas: Indica la carpeta donde guardaste tus archivos de prueba (por ejemplo, tests).
+  Especifica el patrón de nombres de los archivos de prueba: El patrón predeterminado suele ser test*.py, que debería funcionar si nombraste tu archivo como test_renta.py.
+  Haz clic en "Discover Tests".
+  Ejecuta las pruebas:
+  
+  Una vez configuradas, la vista de "Testing" mostrará las pruebas que ha encontrado.
+  Puedes ejecutar todas las pruebas haciendo clic en el botón "Run All Tests" (icono de play en la parte superior).
+  También puedes ejecutar pruebas individuales o grupos de pruebas haciendo clic derecho sobre ellas y seleccionando "Run".
+  Analiza los resultados: Los resultados de las pruebas se mostrarán en la vista de "Testing". Verás qué pruebas pasaron (icono de check verde) y cuáles fallaron (icono de aspa roja). Al seleccionar una prueba fallida, podrás ver los detalles del error en el panel de salida.
+
+**Opción 2: PyCharm**
+
+  Abre tu proyecto en PyCharm: Asegúrate de tener la carpeta raíz de tu proyecto abierta en PyCharm.
+  
+  PyCharm detectará las pruebas automáticamente (generalmente): PyCharm tiene soporte integrado para unittest y, por lo general, detecta automáticamente los archivos y las clases de prueba dentro de tu proyecto.
+  
+  Ejecuta las pruebas:
+  
+  Desde el Explorador de Proyectos: Navega hasta la carpeta que contiene tus archivos de prueba (por ejemplo, la carpeta tests). Haz clic derecho sobre la carpeta o sobre un archivo de prueba específico (test_renta.py) y selecciona "Run 'Unittests in tests'" o "Run 'Unittest test_renta.py'", respectivamente.
+  Desde el Editor de Código: Abre el archivo de prueba (test_renta.py). Haz clic derecho en cualquier lugar dentro de la clase de prueba (RentaTestNorm o RentaTestExt o RentaTestErr) o dentro de un método de prueba específico (por ejemplo, test_base_gravable_1) y selecciona "Run 'Unittests in <nombre_de_la_clase>' " o "Run '<nombre_del_método>' ".
+  Analiza los resultados: PyCharm abrirá una ventana de "Run" en la parte inferior de la interfaz, mostrando los resultados de las pruebas. Verás una lista de las pruebas ejecutadas, indicando si pasaron (icono verde) o fallaron (icono rojo). Al seleccionar una prueba fallida, podrás ver la traza de la excepción y el punto exacto de la falla.
+  
+  Nota Importante: Asegúrate de que tu entorno de Python esté correctamente configurado en ambos IDEs para que puedan encontrar e importar las dependencias de tu proyecto, incluyendo el código fuente en la carpeta src.
+  
 
 ## ¿Cómo está hecho?
 link de excel para la declaracion de impuestos de un asalariado (CASOS DE PRUEBA)
