@@ -53,6 +53,46 @@ Programa que permite calcular si un usuario debe declarar renta, proporcionando 
   
   Nota Importante: Asegúrate de que tu entorno de Python esté correctamente configurado en ambos IDEs para que puedan encontrar e importar las dependencias de tu proyecto, incluyendo el código fuente en la carpeta src.
   
+## Ejecución de la Interfaz de Consola
+
+  A continuación, se explica cómo ejecutar la interfaz de consola de la calculadora de impuesto sobre la renta utilizando Visual Studio Code y PyCharm.
+
+**Opción 1: Visual Studio Code (VS Code)**
+
+  Abre tu proyecto en VS Code: Asegúrate de tener la carpeta raíz de tu proyecto abierta en Visual Studio Code.
+  
+  Abre el archivo de la interfaz de consola: Navega hasta la carpeta src/view/console y abre el archivo ConsolaRenta.py.
+  
+  Abre la terminal integrada: En VS Code, abre la terminal integrada yendo al menú Terminal > New Terminal.
+  
+  Navega al directorio src/view/console: Utiliza el comando cd para cambiar el directorio actual de la terminal a la ubicación del script ConsolaRenta.py. Asumiendo que estás en la raíz del proyecto, el comando sería:
+
+    cd src/view/console
+    
+  Ejecuta el script: Una vez que estés en el directorio correcto, ejecuta el script de Python utilizando el siguiente comando:
+
+
+    python ConsolaRenta.py
+    
+  Interactúa con la calculadora: La calculadora se iniciará en la terminal y te pedirá que ingreses los datos solicitados (ingresos brutos anuales, aportes a salud y pensión, número de dependientes e intereses de crédito hipotecario). Ingresa los valores cuando se te solicite y presiona Enter.
+  
+  Visualiza los resultados: La calculadora mostrará la base gravable, la base gravable en UVT y el impuesto de renta calculado en la terminal.
+
+**Opción 2: PyCharm**
+
+  Abre tu proyecto en PyCharm: Asegúrate de tener la carpeta raíz de tu proyecto abierta en PyCharm.
+  
+  Abre el archivo de la interfaz de consola: Navega hasta la carpeta src/view/console en la ventana del proyecto y abre el archivo ConsolaRenta.py.
+  
+  Ejecuta el script:
+  
+  Haz clic derecho: Haz clic derecho en cualquier lugar dentro del archivo ConsolaRenta.py en el editor de código o en el nombre del archivo en la ventana del proyecto.
+  Selecciona "Run 'ConsolaRenta'": En el menú contextual que aparece, selecciona la opción "Run 'ConsolaRenta'". Si es la primera vez que ejecutas este script, puede que veas una opción como "Run..." y debas seleccionar el archivo ConsolaRenta.py.
+  Interactúa con la calculadora: PyCharm abrirá una ventana de "Run" en la parte inferior de la interfaz. La calculadora se iniciará en esta ventana y te pedirá que ingreses los datos solicitados. Ingresa los valores cuando se te solicite y presiona Enter.
+  
+  Visualiza los resultados: La calculadora mostrará la base gravable, la base gravable en UVT y el impuesto de renta calculado en la ventana de "Run".
+  
+  Nota Importante: Asegúrate de que tu entorno de Python esté correctamente configurado en ambos IDEs para que puedan encontrar e importar las dependencias de tu proyecto, incluyendo el código fuente en la carpeta src/model. La línea sys.path.append("src") en el script ayuda a que Python encuentre los módulos dentro de la carpeta src.
 
 ## ¿Cómo está hecho?
 link de excel para la declaracion de impuestos de un asalariado (CASOS DE PRUEBA)
