@@ -4,6 +4,57 @@
 - Miguel Martinez Tamayo
 - Juan Esteban Vallejo
 
+
+## Editado por:
+- Samuel Uribe
+- Santiago Martinez
+
+## ¿Como ejecuto la GUI?
+
+La aplicación cuenta con una interfaz gráfica construida con **Kivy** para calcular el impuesto sobre la renta en Colombia.  
+
+### ✅ Requisitos previos
+
+Asegúrate de tener instaladas las dependencias:
+
+```bash
+pip install -r requirements.txt
+```
+
+> Si no tienes un archivo `requirements.txt`, puedes instalar Kivy directamente con:
+
+```bash
+pip install kivy
+```
+
+---
+
+### ▶️ Ejecutar la GUI
+
+Desde la raíz del proyecto (donde está la carpeta `src`), usa el siguiente comando:
+
+```bash
+python -m src.view.console.InterfazRenta
+```
+
+Esto garantizará que los módulos se importen correctamente y la aplicación se ejecute sin errores.
+
+---
+
+### 🐞 ¿Errores comunes?
+
+- Si ves `ModuleNotFoundError: No module named 'src'`, asegúrate de estar ejecutando el comando **desde la raíz del proyecto** y no desde dentro de `src`.
+
+Puedes confirmar que estás en la raíz si ves una estructura como esta:
+
+```
+📁 tu_proyecto/
+├── src/
+│   ├── model/
+│   └── view/
+└── README.md
+```
+
 ## ¿Qué es y para qué es?
 Programa que permite calcular si un usuario debe declarar renta, proporcionando valores como el impuesto a pagar y su vase gravable en Unidad de Valor Tributario (UVT) y en pesos colombianos (COP)
 
