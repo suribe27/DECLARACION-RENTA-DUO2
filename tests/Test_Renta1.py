@@ -1,11 +1,18 @@
 import unittest
+import sys
+import os
+
 
 import sys
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if project_root not in sys.path:
+    sys.path.insert(0, project_root)
+
 
 from src.model.LogicaRenta import obtener_base_gravable, obtener_impuesto, obtener_base_gravable_en_uvt, \
     IngresosNegativosError, DependientesExcedidoError, AportesSaludExcedidoError, IngresosInferioresAlMinimoError
 
-sys.path.append("src")
+
 
 
 class RentaTestNorm(unittest.TestCase):
