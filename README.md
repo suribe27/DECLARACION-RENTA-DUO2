@@ -7,7 +7,8 @@
 
 ## Editado por:
 - Samuel Uribe
-- Santiago Martinez
+- Santiago Restrepo
+
 
 ## ¿Como ejecuto la GUI?
 
